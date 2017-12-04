@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RFIDModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RFIDModelStoreContainer">
+    <EntitySet Name="Attendance" EntityType="RFIDModel.Store.Attendance" store:Type="Tables" />
+    <EntitySet Name="AttendanceSheet" EntityType="RFIDModel.Store.AttendanceSheet" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="RFIDModel.Store.Course" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="RFIDModel.Store.Student" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="Attendance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CourseID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="StartTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AttendanceSheet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="AttendanceID" Type="int" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ArrivalTime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Code" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="MatricNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TagID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Department" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+</Schema>
