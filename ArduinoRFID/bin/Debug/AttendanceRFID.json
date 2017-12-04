@@ -1,0 +1,48 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Fasasi Faiz",
+      "matricNo": "102055",
+      "department": "CSE",
+      "tagId": "2610530",
+      "coursesId": [
+        2,
+        1
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Introduction to pascal",
+      "code": "CSE 201"
+    },
+    {
+      "id": 2,
+      "title": "Arduino Programming for Beginners",
+      "code": "CSE 514"
+    }
+  ],
+  "attendance": [
+    {
+      "id": 1,
+      "startTime": "2016-05-13T20:47:24.6728787",
+      "endTime": "2016-05-13T22:48:00",
+      "courseId": 1,
+      "range": 1,
+      "title": "Introduction to pascal CSE 201",
+      "subTitle": "Start: 05/13/2016 8:47 PM\nEnd: 05/13/2016 10:47 PM"
+    },
+    {
+      "id": 2,
+      "startTime": "2016-05-13T19:00:00",
+      "endTime": "2016-05-13T21:00:00",
+      "courseId": 2,
+      "range": 5,
+      "title": "Arduino Programming for Beginners CSE 514",
+      "subTitle": "Start: 05/13/2016 7:00 PM\nEnd: 05/13/2016 9:00 PM"
+    }
+  ],
+  "attendanceSheets": null
+}
