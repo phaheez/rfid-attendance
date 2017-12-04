@@ -1,0 +1,60 @@
+﻿<Page x:Class="ArduinoRFID.DefaultPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+	Title="DefaultPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header="Connect To Arduino" Margin="0,100,0,0" VerticalAlignment="Center"
+                  Background="BurlyWood" Height="Auto" Width="600" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Width="Auto" Height="Auto">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Select Port Name:" 
+                                   Margin="10,0,10,0" FontSize="14" Padding="5"/>
+                    <ComboBox x:Name="ArduinoPortName" Height="40" Width="300" Padding="10" FontSize="14"
+                                  SelectionChanged="ArduinoPortName_OnSelectionChanged"/>
+                    <Button x:Name="BtnConnect" Padding="8" Margin="10,0,0,0" Content="Connect" Background="Coral" 
+                            Foreground="White" Width="120" Click="BtnConnect_Click"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Margin="0,10,0,0" VerticalAlignment="Center" x:Name="GroupBoxReg"
+                  Background="LightGray" Height="200" Width="550" HorizontalAlignment="Center">
+
+                <StackPanel Orientation="Vertical" Width="535" Height="200">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="AVAILABLE COURSES" Margin="0,20,0,0" FontSize="14" Padding="5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock HorizontalAlignment="Left" Text="Select Course :" Margin="90,10,0,5" Padding="8" FontSize="14"/>
+                        <ComboBox x:Name="CbxCourse" Height="40" Width="300" Padding="10" FontSize="14"/>
+                        <!--<ComboBox x:Name="CbxCourse" ItemsSource="{Binding Courses}" Margin="4,10,0,5" Padding="10"
+                              SelectedItem="{Binding SelectedCourse, Mode=TwoWay}" Width="150">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Code}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>-->
+                    </StackPanel>
+                    <Button Padding="8" Margin="0,30,37,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Content="Enroll Course" x:Name="BtnEnroll" Height="47" Width="150" Click="BtnEnroll_Click"/>
+                </StackPanel>
+
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="ArduinoRFID.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        FontFamily="./Fonts/Quicksand-Regular.otf#Quicksand Regular"
+        WindowStartupLocation="CenterScreen" SnapsToDevicePixels="True"
+        Title="RFID Student Attendance System" Closing="MainWindow_OnClosing"
+        WindowState="Maximized">
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+    </Window.Triggers>
+
+
+    <Grid Background="#e3e3e3" Margin="0,0,0,-45">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="261*"/>
+            <ColumnDefinition Width="26*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" ZIndex="1" Grid.ColumnSpan="3">
+            <DockPanel>
+                <Menu DockPanel.Dock="Top" Height="25">
+                    <MenuItem Header="_Home" Name="HomeMenu" Click="HomeMenu_Click"/>
+
+                    <MenuItem Header="_Student" Name="StudentMenu" Click="StudentMenu_Click">
+                        <!--<MenuItem Header="_Student" Click="StudentMenu_Click"/>
+                        <Separator HorizontalAlignment="Left" Width="100"></Separator>
+                        <MenuItem Header="_Exit"/>-->
+                    </MenuItem>
+
+                    <MenuItem Header="_Course" Click="CourseMenu_Click"/>
+
+                    <MenuItem Header="_Attendance" Click="AttendanceMenu_Click"/>
+
+                    <MenuItem Header="_Attendance Sheet" Click="AttendanceSheetMenu_Click"/>
+                </Menu>
+            </DockPanel>
+
+            <Border Background="#34495e" Height="70">
+                <TextBlock VerticalAlignment="Center" Margin="350,0,0,0" Foreground="#ffffff" IsHyphenationEnabled="True" LineStackingStrategy="BlockLineHeight" LineHeight="35.99999" TextAlignment="Left" TextWrapping="Wrap">
+					<Run FontSize="35.99999" FontFamily="./Fonts/Quicksand-Bold.otf#Quicksand Bold" Text="RFID BASED STUDENT ATTENDANCE SYSTEM"/>
+                </TextBlock>
+            </Border>
+            <Rectangle Fill="#2c3e50" Height="5"></Rectangle>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Frame x:Name="Frame" Source="{Binding Navigate, Mode=OneWay}"  HorizontalAlignment="Center" NavigationUIVisibility="Hidden" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
